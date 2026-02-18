@@ -5,7 +5,7 @@ import './PostInfo.scss';
 export const PostInfo = ({ post }) => {
   let resultComments;
 
-  if (post.comments.length > 1) {
+  if (post.comments && post.comments.length > 0) {
     resultComments = <CommentList comments={post.comments} />;
   } else {
     resultComments = <b data-cy="NoCommentsMessage">No comments yet</b>;
@@ -18,7 +18,7 @@ export const PostInfo = ({ post }) => {
         <UserInfo user={post.user} />
       </div>
       <p className="PostInfo__body">{post.body}</p>
-      {resultComments};
+      {resultComments}
     </div>
   );
 };
