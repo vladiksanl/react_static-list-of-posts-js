@@ -1,6 +1,10 @@
 import './UserInfo.scss';
 
 export const UserInfo = ({ user }) => {
+  if (!user) {
+    return null;
+  }
+
   return (
     <p>
       {' Posted by  '}
